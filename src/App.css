@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+  background-image: linear-gradient(to right, lightgrey,skyblue,lightgreen);
+  width:100vw;
+  height:auto;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0);
+  padding:10px;
+}
+
+body{
+  margin:0px;
+}
+
+
+@media screen and (max-width:600px){
+  .App {
+    text-align: center;
+    background-image: linear-gradient(to right, lightgrey,skyblue,lightgreen);
+    width:100vw;
+    height:100vh;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0);
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  
+}

@@ -1,22 +1,54 @@
 import React from 'react'
+import Card from "./components/Card"
 
-
-import Banner from "./components/Banner"
 import "./App.css"
 
-const BannerDetails=[
-  {uniqueNo:1,heading:"The Season Latest",description:"Get the seasons all latest designs in a flickof your hands",styles:"banner1"},
-  {uniqueNo:2,heading:"Our new Designs",description:"Get the designs developed by our in-house team all for youself",styles:"banner2"},
-  {uniqueNo:3,heading:"Insiders",description:"Get the top class productions for yourself with an extra off",styles:"banner3"}
-]
+const cardsList = [
+    {
+      id: 1,
+      title: 'Data Scientist',
+      description:
+        'Data scientists gather and analyze large sets of structured and unstructured data',
+      imgUrl: 'https://assets.ccbp.in/frontend/react-js/data-scientist-img.png',
+      className: 'card-1',
+    },
+    {
+      id: 2,
+      title: 'IOT Developer',
+      description:
+        'IoT Developers are professionals who can develop, manage, and monitor IoT devices.',
+      imgUrl: 'https://assets.ccbp.in/frontend/react-js/iot-developer-img.png',
+      className: 'card-2',
+    },
+    {
+      id: 3,
+      title: 'VR Developer',
+      description:
+        'A VR developer creates completely new digital environments that people can see.',
+      imgUrl: 'https://assets.ccbp.in/frontend/react-js/vr-developer-img.png',
+      className: 'card-3',
+    },
+    {
+      id: 4,
+      title: 'ML Engineer',
+      description:
+        'Machine learning engineers feed data into models defined by data scientists.',
+      imgUrl: 'https://assets.ccbp.in/frontend/react-js/ml-engineer-img.png',
+      className: 'card-4',
+    }
+  ]
+
 
 const App = () => {
   return (
-    
-      <ul className="App">
-        {BannerDetails.map(eachItem=> <Banner BannerDetails={eachItem} key={eachItem.uniqueNo}/>)}
-      </ul>
-    
+    <div className="home-bg">
+        <h1 className="heading">Learn 4.0 Technologies</h1>
+        <p>Get trained by alumni of IITS and top companies like amazon.microSoft,intel, Nvidia,Qualcommn,etc</p>
+        <ul>
+           <li className="list ul-style">{cardsList.map(eachCard=><Card cardDetails={eachCard} key={eachCard.id}/>)}</li>
+        </ul>
+        
+    </div>
   )
 }
 

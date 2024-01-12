@@ -1,0 +1,53 @@
+ .card{
+    background-color:#ffffff;
+    width:250px;
+    height:220px;
+    border-radius:10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    margin:20px;
+    padding:10px;
+}
+
+.card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-1{
+    border-top:4px solid red;
+}
+.card-2{
+    border-top:4px solid #00a8e7;
+}
+.card-3{
+    border-top:4px solid #44c4a1;
+}
+.card-4{
+    border-top:4px solid goldenrod;
+}
+
+
+.card-heading{
+    font-size:20px;
+    font-family:"Roboto";
+    color:#171f46;
+    margin-bottom:10px;
+    font-weight:bolder;
+}
+
+.card-para{
+    font-size:15px;
+    font-family:"caveat";
+    color:#64748b;
+    margin-bottom:10px;
+    font-weight:lighter;
+}
+
+.card-img{
+    height:60px;
+    width:60px;
+    position:relative;
+    left: 150px;
+    padding:10px;
+} 

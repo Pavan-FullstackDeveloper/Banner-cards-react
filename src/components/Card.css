@@ -1,53 +1,64 @@
- .card{
-    background-color:#ffffff;
-    width:250px;
-    height:220px;
-    border-radius:10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out;
-    margin:20px;
-    padding:10px;
+body{
+    margin:0px;
+}
+.bg{
+    background-color:skyblue;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 }
 
-.card:hover{
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.heading{
+    font-family:'Times New Roman', Times, serif;
+    font-size:xx-large;
+    font-weight:bold;
+    color:black;
+    font-size:35px;
 }
 
-.card-1{
-    border-top:4px solid red;
-}
-.card-2{
-    border-top:4px solid #00a8e7;
-}
-.card-3{
-    border-top:4px solid #44c4a1;
-}
-.card-4{
-    border-top:4px solid goldenrod;
-}
-
-
-.card-heading{
-    font-size:20px;
+.para{
     font-family:"Roboto";
-    color:#171f46;
-    margin-bottom:10px;
-    font-weight:bolder;
+    font-size:large;
+    font-weight:bold;
+    color:gray;
+    font-size:20px;
 }
 
-.card-para{
+.div2{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+}
+
+.button{
+    width:150px;
+    height:50px;
+    border-radius:10px;
+    background-color:blue;
+    color:white;
+    border-width:0px;
     font-size:15px;
-    font-family:"caveat";
-    color:#64748b;
-    margin-bottom:10px;
-    font-weight:lighter;
+    
+}
+.button2{
+    width:150px;
+    height:50px;
+    border-radius:10px;
+    background-color:blue;
+    color:white;
+    border-width:0px;
+    font-size:15px;  
+    margin-left:20px;
 }
 
-.card-img{
-    height:60px;
-    width:60px;
-    position:relative;
-    left: 150px;
-    padding:10px;
-} 
+.counter{
+    font-family:"Roboto";
+    font-size:large;
+    font-weight:bold;
+    color:red;
+    font-size:40px;
+}

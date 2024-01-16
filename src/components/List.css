@@ -1,0 +1,52 @@
+.name-style{
+    font-size:20px;
+    font-weight:bold;
+    color:black;
+    font-family:"Roboto";
+}
+
+.text{
+    font-size:15px;
+    font-weight:bold;
+    color:rgb(19, 216, 82);
+    font-family:"Roboto";
+}
+
+.img-style{
+    height:100px;
+    width:100px;
+    border-radius:50%;
+
+}
+.delete-icon {
+    color: black; /* Change the color to your preference */
+    font-size: 24px; 
+    margin-left:25px;/* Adjust the size as needed */
+  }
+  
+
+.div1{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    background-color:transparent;
+    margin:15px;
+    height:100px;
+    width:auto;
+    
+
+}
+
+.btn-img{
+    height:20px;
+    width:30px;
+    padding:5px;
+    background-color:transparent;
+    border-radius:10px;
+}
+.button-style{
+    background-color:transparent;
+    border:none;
+}

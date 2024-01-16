@@ -1,0 +1,115 @@
+/* Common styles for all screen sizes */
+.history-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    transform: scale(1);
+  }
+  
+  .lists {
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+  }
+  
+  .time {
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .title {
+    font-size: 18px;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .domain {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  .delete-icon {
+    color: #e74c3c;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .delete-icon:hover {
+    color: #c0392b;
+  }
+  
+  .Button-styling {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Button-styling:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Animation and Transform */
+  .history-div:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
+  
+  .lists:hover {
+    transform: translateX(5px);
+  }
+  
+  .logo:hover {
+    transform: rotate(360deg);
+  }
+  
+  /* Media Queries */
+  /* For screens smaller than 600px */
+  @media screen and (max-width: 600px) {
+    .lists {
+      flex-direction: column;
+    }
+  
+    .logo {
+      width: 40px;
+    }
+  }
+  
+  /* For screens between 601px and 900px */
+  @media screen and (min-width: 601px) and (max-width: 900px) {
+    .time {
+      font-size: 16px;
+    }
+  
+    .title {
+      font-size: 16px;
+    }
+  }
+  
+  /* For screens larger than 900px */
+  @media screen and (min-width: 901px) {
+    .time {
+      font-size: 20px;
+    }
+  
+    .title {
+      font-size: 20px;
+    }
+  }
+  

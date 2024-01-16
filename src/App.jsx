@@ -1,114 +1,117 @@
 import React from 'react'
-
 import {useState} from "react"
-
-import Lists from "./components/Lists"
-
+import History from "./components/History"
 import "./App.css"
 
 const App = () => {
+  const initialHistoryList = [
+    {
+      id: 0,
+      timeAccessed: '07:45 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/instagram-img.png',
+      title: 'Instagram',
+      domainUrl: 'instagram.com',
+    },
+    {
+      id: 1,
+      timeAccessed: '05:45 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/twitter-img.png',
+      title: 'Twitter. It’s what’s happening / Twitter',
+      domainUrl: 'twitter.com',
+    },
+    {
+      id: 2,
+      timeAccessed: '04:35 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/facebook-img.png',
+      title: 'Facebook – log in or sign up',
+      domainUrl: 'facebook.com',
+    },
+    {
+      id: 3,
+      timeAccessed: '04:25 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/linkedin-img.png',
+      title: 'LinkedIn: Log In or Sign Up',
+      domainUrl: 'linkedin.com',
+    },
+    {
+      id: 4,
+      timeAccessed: '04:00 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/hashnode-img.png',
+      title: 'Hashnode: Everything you need to start blogging as a developer!',
+      domainUrl: 'hashnode.com',
+    },
+    {
+      id: 5,
+      timeAccessed: '03:25 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/github-img.png',
+      title: 'GitHub: Where the world builds software · GitHub',
+      domainUrl: 'github.com',
+    },
   
-  const tweets=[{
-    id:1,
-    imgUrl:"Pictures/pavan1.jpg",
-    user:"Pavan Thoti",
+    {
+      id: 6,
+      timeAccessed: '02:45 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/react-img.png',
+      title: 'React – A JavaScript library for building user interfaces',
+      domainUrl: 'reactjs.org',
+    },
+    {
+      id: 7,
+      timeAccessed: '01:25 PM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/stackoverflow-img.png',
+      title: 'Stack Overflow - Where Developers Learn, Share, & Build Careers',
+      domainUrl: 'stackoverflow.com',
+    },
   
-    tweet:"12.5M Tweets"
-   
-  },{
-    id:2,
-    imgUrl:"Pictures/Mahesh.jpg",
-    user:"Mahesh",
-  
-    tweet:"13.5k Tweets"
-    
-  },{
-    id:3,
-    imgUrl:"Pictures/Kanna.jpg",
-    user:"Kanna",
-  
-    tweet:"13.5k Tweets"
-    
-  },{
-    id:4,
-    imgUrl:"Pictures/susith.jpg",
-    user:"Susith",
-  
-    tweet:"13.5k Tweets"
-    
-  }]
-
-  
-
-  const [searchValue,setValue]=useState("")
-  const [userDetails,setUserDetails]=useState(tweets)
-
-  const DeleteUser=(id)=>{
-      const pavan=userDetails.filter(user=>{
-        return user.id!==id
-      } )
-      setUserDetails(pavan)
+    {
+      id: 8,
+      timeAccessed: '09:25 AM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/gmail-img.png',
+      title: 'Gmail',
+      domainUrl: 'mail.google.com',
+    },
+    {
+      id: 9,
+      timeAccessed: '09:00 AM',
+      logoUrl: 'https://assets.ccbp.in/frontend/react-js/google-img.png',
+      title: 'Google',
+      domainUrl: 'google.com',
+    },
+  ]
+  const [searchValue,setSearchValue]= useState("")
+  const [historyList, setHistoryList] = useState(initialHistoryList);
+  const searchInput=(event)=>{
+      setSearchValue(event.target.value)
   }
 
-  const searchHandler=(event)=>{
-      setValue(event.target.value)
+  const searchHistoryLists=historyList.filter(item=>{
+    return (item.title).toLowerCase().includes(searchValue.toLowerCase())})
+
+  const DeleteHistory=(id)=>{
+    let updatedHistory=historyList.filter(history=>{
+      return history.id!==id
+    })
+    setHistoryList(updatedHistory)
   }
-  
-  const searchResult=userDetails.filter((eachUser)=>{
-    return (eachUser.user).toLowerCase().includes(searchValue.toLowerCase())
-  })
-  
 
   return (
-    <div className="home">
-      <h1 className="h">User Lists</h1>
-    
-      <input type="text" className="int" placeholder="serch for users" onChange={searchHandler} value={searchValue}/>
-      <ul>
-        <li className="pavan">{searchResult.map((eachItem)=><Lists key={eachItem.id} userDetails={eachItem} DeleteUser={DeleteUser}/>)}</li>
-      </ul>
-      
-    
-
+    <div>
+      <div className="nav-bar">
+         <img src="https://assets.ccbp.in/frontend/react-js/history-website-logo-img.png" alt="Applogo" className="App-logo" />
+         <div className="search-container">
+            <img src="https://assets.ccbp.in/frontend/react-js/search-img.png" className="icon-styling" alt="input-icon" />
+            <input type="text" className="input-styling" placeholder="Search History" onChange={searchInput} />
+         </div>
+         
+      </div>
+      <div className="bottom-section">
+          <ul>
+            {searchHistoryLists.map(eachHistory=><History history={eachHistory} DeleteHistory={DeleteHistory} />)}
+          </ul>
+          
+      </div>
     </div>
   )
 }
 
 export default App
-
-
-
-const Tweet=(props)=>{
-  const [like,setLike]=useState(0)
-
-  if(props.show){
-    return (
-      <div className="div1">
-        <h>X</h>
-        <h1>{props.text}</h1>
-        <h2>{props.name}</h2>
-        <p>{props.t}</p>
-        <p>{like} likes</p>
-        <p>{props.salary}</p>
-        <p>{props.company}</p>
-        <button onClick={()=>setLike(like+1)}>Like</button>
-        {props.tweetMore?<h1 style={{color:"white"}}>No content</h1>:<h1 style={{backgroundColor:"white"}}>Has more content</h1>}
-  
-      </div>
-    )
-  }else{
-    return(
-      <>
-      <p>
-        This content is hidden
-      </p>
-      </>
-    )
-  }
-  
-}
-Tweet.defaultProps = {
-  salary:1500000,
-  company:"Mnc",
-  
-}

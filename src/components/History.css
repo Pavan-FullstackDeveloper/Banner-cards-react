@@ -1,4 +1,5 @@
 /* Common styles for all screen sizes */
+
 .history-div {
     display: flex;
     align-items: center;
@@ -16,63 +17,69 @@
     display: flex;
     align-items: center;
     transition: transform 0.3s ease;
+    flex:4;
   }
   
   .time {
     font-size: 18px;
     margin-right: 10px;
+    color:rgb(82, 81, 81);
   }
   
   .logo {
     width: 50px;
     height: auto;
     margin-right: 10px;
+    border-radius:50% 20%;
     transition: transform 0.3s ease;
   }
   
   .title {
     font-size: 18px;
     margin-right: 10px;
-    color: #333;
+    color: #03124d;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
   
   .domain {
     font-size: 14px;
-    color: #777;
+    color: #095553;
+    margin:8px;
   }
   
   .delete-icon {
-    color: #e74c3c;
+    color: black;
     cursor: pointer;
     transition: color 0.3s ease;
   }
   
   .delete-icon:hover {
-    color: #c0392b;
+    color: #230805;
   }
   
   .Button-styling {
-    background-color: #3498db;
+    background-color: white;
     color: #fff;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
   }
   
   .Button-styling:hover {
-    background-color: #2980b9;
+    background-color: #e5d4d4;
   }
   
   /* Animation and Transform */
   .history-div:hover {
     background-color: #e0e0e0;
-    transform: scale(1.05);
+    transform: scale(1);
   }
   
   .lists:hover {
-    transform: translateX(5px);
+    transform: translateX(1px);
   }
   
   .logo:hover {
